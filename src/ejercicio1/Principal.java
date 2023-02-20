@@ -1,6 +1,7 @@
 package ejercicio1;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import utilidades.Leer;
 
@@ -8,11 +9,11 @@ public class Principal {
 
 	public static void main(String[] args) {
 		Nota no;
-		int op, opN, nNota = 0;
+		int op, opN, nNota = 1;
 		Mostrar mo = new Mostrar(); 
 		String propiedad, contenido;
 		
-		ArrayList <Nota> listaNotas = new ArrayList<Nota>();
+		List <Nota> listaNotas = new ArrayList<Nota>();
 		do {
 			mo.imprimirMenu();
 			System.out.println("¿Qué desea hacer?");

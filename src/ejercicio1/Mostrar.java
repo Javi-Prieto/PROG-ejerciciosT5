@@ -17,4 +17,5 @@ public class Mostrar {
 		System.out.println("Contenido: ");
 		System.out.println(no.getContenido());
 	}
+	
 }

@@ -32,13 +32,16 @@ public class GestionClub {
 	public void addSocio(Socio so) {
 		soc.addSocio(so);
 	}
-	public void deleteSocio(int index) {
-		soc.deleteSocio(index);
+	public void deleteSocio(String dni) {
+		soc.deleteSocio(soc.findByDni(dni));
 	}
-	public void modNCaballo(int index, int nCaba) {
-		soc.modNCaballo(index, nCaba);
+	public void modNCaballo(String dni, int nCaba) {
+		soc.modNCaballo(soc.findByDni(dni), nCaba);
 	}
 	public double cuotaFinal(int index) {
 		return soc.getLista().get(index).getnCaballo() * cuotaBarco;
+	}
+	public void mostrarCliente(String dni) {
+			System.out.println(soc.getLista().get(soc.findByDni(dni)));
 	}
 }
