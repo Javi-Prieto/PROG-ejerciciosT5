@@ -1,17 +1,16 @@
 package ejercicio3;
 
-import java.util.Arrays;
 
 public class Alumno {
 	//Fields
 	private String nombre, codAlu;
-	private double [] notas;
+	private double  notasM;
 	//Constructor
-	public Alumno(String nombre, String codAlu, double[] notas) {
+	public Alumno(String nombre, String codAlu, double notas) {
 		super();
 		this.nombre = nombre;
 		this.codAlu = codAlu;
-		this.notas = notas;
+		this.notasM = notas;
 	}
 	//Getter and setter
 	public String getNombre() {
@@ -26,16 +25,16 @@ public class Alumno {
 	public void setCodAlu(String codAlu) {
 		this.codAlu = codAlu;
 	}
-	public double[] getNotas() {
-		return notas;
+	public double getNotas() {
+		return notasM;
 	}
-	public void setNotas(double[] notas) {
-		this.notas = notas;
+	public void setNotas(double notas) {
+		this.notasM = notas;
 	}
 	//toString
 	@Override
 	public String toString() {
-		return "Alumno [nombre=" + nombre + ", codAlu=" + codAlu + ", notas=" + Arrays.toString(notas) + "]";
+		return "Alumno [nombre=" + nombre + ", codAlu=" + codAlu + ", notasM=" + notasM + "]";
 	}
 	
 	
