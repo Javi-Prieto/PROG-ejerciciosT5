@@ -2,7 +2,7 @@ package ejercicio4;
 
 import java.util.Objects;
 
-public class Contacto {
+public class Contacto implements Comparable<Contacto>{
 	//Fields
 	private int id;
 	private String nombre, correo;
@@ -62,6 +62,13 @@ public class Contacto {
 			return false;
 		Contacto other = (Contacto) obj;
 		return Objects.equals(correo, other.correo) && id == other.id && Objects.equals(nombre, other.nombre);
+	}
+	
+
+	@Override
+	public int compareTo(Contacto o) {
+		// TODO Auto-generated method stub
+		return -(this.getNombre().toLowerCase().compareTo(o.getNombre().toLowerCase()));
 	}
 	
 }
