@@ -1,12 +1,18 @@
 package ejercicio7;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Principal {
-	public void main(String [] args) {
-		List <LineaDeVenta> lista = new ArrayList<LineaDeVenta>();
+	public static void main(String [] args) {
+		Map <Integer, LineaDeVenta> lista = new HashMap<Integer, LineaDeVenta>();
 		Venta ven = new Venta (lista);
-		LineaDeVenta lin;
+		Producto rop = new Ropa(20, "Camiseta", "0"), 
+				alim = new Alimentacion(10, "Manzana", "1", 28);
+		LineaDeVenta lin = new LineaDeVenta(rop, 2),
+				lin2 = new LineaDeVenta(alim, 1);
+		ven.agregarLineaVenta(0, lin);
+		ven.agregarLineaVenta(1, lin2);
+		ven.mostrarTicket();
 	}
 }

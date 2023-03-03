@@ -1,6 +1,6 @@
 package ejercicio6;
 
-public class Trabajador {
+public class Trabajador implements Comparable<Trabajador>{
 	//Fields
 	private String nombre, dni;
 	private double horasT, sueldoF;
@@ -42,6 +42,20 @@ public class Trabajador {
 	@Override
 	public String toString() {
 		return "Trabajador [nombre=" + nombre + ", dni=" + dni + ", horasT=" + horasT + ", sueldoF=" + sueldoF + "]";
+	}
+	@Override
+	public int compareTo(Trabajador t) {
+		double horasT1 = this.horasT, horasT2 = t.getHorasT();
+		if(horasT1 > horasT2) {
+			return 1;
+		}else {
+			if(horasT2 > horasT1) {
+				return -1;
+			}else {
+				return 0;
+			}
+		}
+		
 	}
 	
 	

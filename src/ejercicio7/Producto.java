@@ -38,6 +38,8 @@ public abstract class Producto implements Comparable<Producto>{
 	}
 	//Method
 	public abstract double calcularPVP();
+	
+	@Override
 	public int compareTo(Producto o) {
 		return -(this.nombre.toLowerCase().compareTo(o.nombre.toLowerCase()));
 	}
