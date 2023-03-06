@@ -32,9 +32,11 @@ public class Venta {
 		Iterator<LineaDeVenta> it = lista.values().iterator();
 		System.out.println("---------------------------------------------------------");
 		System.out.println("Cantidad \t Producto \t Precio Unit \t Precio Final");
+		LineaDeVenta li;
 		while(it.hasNext()) {
-			System.out.println(it.next().getCant() +"\t\t" + it.next().getPr().getNombre() + "\t" 
-		/*+ it.next().getPr().getPrecioUnit() + "\t"+ it.next().calcularPrecioTotal()*/);
+			li = it.next();
+			System.out.println(li.getCant() +"\t\t" + li.getPr().getNombre() + "\t\t" 
+			+ li.getPr().getPrecioUnit() + "\t\t"+ li.calcularPrecioTotal());
 		}
 	}
 

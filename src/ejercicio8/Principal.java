@@ -37,7 +37,7 @@ public class Principal {
 					cl = new Cliente(nombre, dni, edad);
 					System.out.println("Indique el saldo inicial de la cuenta");
 					saldo = Leer.datoDouble();
-					if(edad > 20) {
+					if(edad < 20) {
 						System.out.println("Le corresponde una Cuenta Joven");
 						cu = new CuentaJoven(saldo, false);
 						of.addCuenta(cu, cl);
@@ -67,10 +67,27 @@ public class Principal {
 					}
 					break;
 				case 2:
+					System.out.println("Diga el dni de la persona con la cuenta");
+					dni = Leer.dato();
+					System.out.println("Indique el saldo a añadir");
+					saldo = Leer.datoDouble();
+					of.addMoney(saldo, dni);
 					break;
 				case 3:
+					System.out.println("Diga el dni de la persona con la cuenta");
+					dni = Leer.dato();
+					System.out.println("Indique el saldo a añadir");
+					saldo = Leer.datoDouble();
+					of.substractMoney(saldo, dni);
 					break;
 				case 4:
+					System.out.println("-------------------");
+					System.out.println("1. Mostrar por edad");
+					System.out.println("2. Mostrar por nombre");
+					System.out.println("0. Salir");
+					System.out.println("-------------------");
+					opN = Leer.datoInt();
+					of.mostrarTodos(opN);
 					break;
 				case 0:
 					System.out.println("Hasta luego gracias");

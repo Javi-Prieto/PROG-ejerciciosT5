@@ -7,7 +7,7 @@ public class CompararPorNombre implements Comparator<Cliente>{
 	@Override
 	public int compare(Cliente o1, Cliente o2) {
 		
-		return -(o1.getNombre().toLowerCase().compareTo(o2.getNombre().toLowerCase()));
+		return (o1.getNombre().toLowerCase().compareTo(o2.getNombre().toLowerCase()));
 	}
 
 }

@@ -45,12 +45,14 @@ public class Oficina {
 		}
 		return null;
 	}
+	
 	public void addMoney(double din, String dni) {
 		lista.get(findByDNI(dni)).ingresarDinero(din);
 	}
 	public void substractMoney(double din, String dni) {
 		lista.get(findByDNI(dni)).ingresarDinero(din);
 	}
+	
 	public void mostrarUno(String dni) {
 		System.out.println("Cliente: " + findByDNI(dni));
 		System.out.println("Cuenta: " + lista.get(findByDNI(dni)));
@@ -59,20 +61,31 @@ public class Oficina {
 		Map <Cliente, Cuenta> listado;
 		
 		switch(num) {
-			case 0:
-				listado  = new TreeMap<Cliente, Cuenta>();
-				for(Cliente cl : listado.keySet()) {
-					System.out.println("Cliente: " + cl);
-					System.out.println("Cuenta: " + listado.get(cl));
-				}
-				break;
 			case 1:
-				listado  = new TreeMap<Cliente, Cuenta>(new CompararPorNombre());
+				listado  = new TreeMap<Cliente, Cuenta>();
+				listado.putAll(lista);
 				for(Cliente cl : listado.keySet()) {
 					System.out.println("Cliente: " + cl);
 					System.out.println("Cuenta: " + listado.get(cl));
 				}
 				break;
+			case 2:
+				listado  = new TreeMap<Cliente, Cuenta>(new CompararPorNombre());
+				listado.putAll(lista);
+				System.out.println("----------------MOSTRAR---------------");
+				for(Cliente cl : listado.keySet()) {
+					
+					System.out.println("Cliente: " + cl);
+					System.out.println("Cuenta: " + listado.get(cl));
+					System.out.println("-----------------------------------");
+				}
+				break;
+			case 0:
+				System.out.println("Volviendo al menú");
+				break;
+			default:
+				System.out.println("Número inexistente");
+				
 		}
 	}
 }
