@@ -1,7 +1,7 @@
 package ejercicio8;
 
-import java.util.Iterator;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class Oficina {
 	//Fields
@@ -45,7 +45,34 @@ public class Oficina {
 		}
 		return null;
 	}
-	public void addMoney(double din) {
+	public void addMoney(double din, String dni) {
+		lista.get(findByDNI(dni)).ingresarDinero(din);
+	}
+	public void substractMoney(double din, String dni) {
+		lista.get(findByDNI(dni)).ingresarDinero(din);
+	}
+	public void mostrarUno(String dni) {
+		System.out.println("Cliente: " + findByDNI(dni));
+		System.out.println("Cuenta: " + lista.get(findByDNI(dni)));
+	}
+	public void mostrarTodos(int num) {
+		Map <Cliente, Cuenta> listado;
 		
+		switch(num) {
+			case 0:
+				listado  = new TreeMap<Cliente, Cuenta>();
+				for(Cliente cl : listado.keySet()) {
+					System.out.println("Cliente: " + cl);
+					System.out.println("Cuenta: " + listado.get(cl));
+				}
+				break;
+			case 1:
+				listado  = new TreeMap<Cliente, Cuenta>(new CompararPorNombre());
+				for(Cliente cl : listado.keySet()) {
+					System.out.println("Cliente: " + cl);
+					System.out.println("Cuenta: " + listado.get(cl));
+				}
+				break;
+		}
 	}
 }

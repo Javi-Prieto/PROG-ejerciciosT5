@@ -1,6 +1,6 @@
 package ejercicio8;
 
-public class Cliente {
+public class Cliente implements Comparable<Cliente>{
 	//Fields
 	private String nombre, dni;
 	private int edad;
@@ -42,6 +42,19 @@ public class Cliente {
 	@Override
 	public String toString() {
 		return "Cliente [nombre=" + nombre + ", dni=" + dni + ", edad=" + edad + "]";
+	}
+
+	@Override
+	public int compareTo(Cliente o) {
+		if(this.getEdad() > o.getEdad()) {
+			return 1;
+		}else {
+			if(this.getEdad() < o.getEdad()) {
+				return -1;
+			}else {
+				return 0;
+			}
+		}
 	}
 	
 }
