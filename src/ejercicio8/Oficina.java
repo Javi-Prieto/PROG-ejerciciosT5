@@ -47,15 +47,29 @@ public class Oficina {
 	}
 	
 	public void addMoney(double din, String dni) {
-		lista.get(findByDNI(dni)).ingresarDinero(din);
+		if(findByDNI(dni) != null) {
+			lista.get(findByDNI(dni)).ingresarDinero(din);
+		}else {
+			System.out.println("Persona no encontrada");
+		}
+		
 	}
 	public void substractMoney(double din, String dni) {
-		lista.get(findByDNI(dni)).ingresarDinero(din);
+		if(findByDNI(dni) != null) {
+			lista.get(findByDNI(dni)).retirarDinero(din);
+		}else {
+			System.out.println("Persona no encontrada");
+		}
+		
 	}
 	
 	public void mostrarUno(String dni) {
-		System.out.println("Cliente: " + findByDNI(dni));
-		System.out.println("Cuenta: " + lista.get(findByDNI(dni)));
+		if(findByDNI(dni) != null) {
+			System.out.println("Cliente: " + findByDNI(dni));
+			System.out.println("Cuenta: " + lista.get(findByDNI(dni)));
+		}else {
+			System.out.println("Persona no encontrada");
+		}
 	}
 	public void mostrarTodos(int num) {
 		Map <Cliente, Cuenta> listado;

@@ -72,6 +72,7 @@ public class Principal {
 					System.out.println("Indique el saldo a añadir");
 					saldo = Leer.datoDouble();
 					of.addMoney(saldo, dni);
+					
 					break;
 				case 3:
 					System.out.println("Diga el dni de la persona con la cuenta");
